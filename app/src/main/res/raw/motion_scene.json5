@@ -1,0 +1,68 @@
+{
+  ConstraintSets: {
+
+    start: {
+
+      box: {
+        width: 'spread',
+        height: 200,
+        start: ['parent', 'start'],
+        end: ['parent', 'end'],
+        top: ['parent', 'top'],
+
+      },
+
+      icon: {
+        width: 50,
+        height: 50,
+        start: ['box', 'start', 20],
+        top: ['box', 'top', 0],
+        bottom: ['box', 'bottom', 0],
+        alpha: 1,
+      },
+
+      title: {
+        start: ['icon', 'end',10],
+        top: ['icon', 'top', 0],
+        bottom: ['icon', 'bottom', 0],
+      }
+
+
+    },
+    end: {
+
+      box: {
+        width: 'spread',
+        height: 700,
+        start: ['parent', 'start'],
+        end: ['parent', 'end'],
+        top: ['parent', 'top']
+      },
+
+      icon: {
+        width: 250,
+        height: 250,
+        start: ['box', 'start', 0],
+        end: ['box', 'end', 0],
+        top: ['box', 'top', 0],
+        bottom: ['box', 'bottom', 0],
+        alpha: 0.7,
+      },
+      title: {
+        start: ['box', 'start', 0],
+        end: ['box', 'end', 0],
+        top: ['icon', 'bottom', 30],
+      }
+
+
+    }
+
+  },
+  Transitions: {
+    default: {
+      from: 'start',
+      to: 'end',
+      pathMotionArc: 'startHorizontal'
+    },
+  }
+}
